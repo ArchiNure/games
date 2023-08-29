@@ -1,4 +1,8 @@
-.b-colour1 {
+.bg-primary {
     background-color:
-        #e1fffd;
+        #e1fffd !important;
+}
+
+#logo {
+    max-height: 150px;
 }
