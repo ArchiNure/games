@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Oswald:wght@400;500&display=swap');
 
+h1,
+h2,
+h3 .cool-letter {
+    font-family: 'Black Ops One', cursive;
+}
+
 .cool-letter {
     font-family: 'Black Ops One', cursive;
 }
@@ -7,9 +13,6 @@
 .oswald {
     font-family: 'Oswald', sans-serif;
 }
-
-
-
 
 .bg-primary {
     background-color:
