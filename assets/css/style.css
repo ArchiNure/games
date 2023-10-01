@@ -8,9 +8,13 @@ h3,
 }
 
 p,
-.oswald {
-    font-family: 'Oswald', sans-serif;
+.normall {
+    font-family: 'Share Tech Mono', monospace;
+    ;
+
 }
+
+
 
 .bg-primary {
     background-color:
@@ -19,4 +23,8 @@ p,
 
 #logo {
     max-height: 150px;
+}
+
+.bg-image {
+    background-image: url(../../assets/images/bacground.jpg);
 }
