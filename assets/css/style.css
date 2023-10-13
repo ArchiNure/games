@@ -24,3 +24,7 @@ p,
 /* .bg-image {
     background-image: url(../../assets/images/bacground.jpg);
 } */
+
+.max-height {
+    max-height: 30vh
+}
