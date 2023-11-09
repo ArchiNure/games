@@ -28,3 +28,7 @@ p,
 .max-height {
     max-height: 30vh
 }
+
+.max-width {
+    max-width: 600px
+}
