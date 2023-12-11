@@ -5,3 +5,5 @@ function hello(num1, num2) {
         console.log(`${num1} is bigger`)
     }
 }
+
+console.log(document.body.innerHTML)
