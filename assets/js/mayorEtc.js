@@ -7,3 +7,6 @@ function hello(num1, num2) {
     console.log(`${num1} is bigger`);
   }
 }
+
+const submitButton = document.getElementById("run-game");
+console.log(submitButton);
