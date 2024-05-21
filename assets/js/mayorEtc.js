@@ -1,3 +1,5 @@
+const submitButton = document.getElementById("run-game");
+
 function hello(num1, num2) {
   if (num1 < num2) {
     console.log(`${num2} is bigger.`);
@@ -8,5 +10,9 @@ function hello(num1, num2) {
   }
 }
 
-const submitButton = document.getElementById("run-game");
-console.log(submitButton);
+submitButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  console.log(event);
+  const num2 = document.getElementById("num1");
+  const num1 = document.getElementById("num2");
+});
