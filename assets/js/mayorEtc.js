@@ -1,6 +1,9 @@
 const submitButton = document.getElementById("run-game");
 
 function mayorMenor(num1, num2) {
+  const answer = document.getElementById("answer");
+  console.dir(answer);
+  answer.textContent = "The biggest number is: ";
   if (num1 < num2) {
     console.log(`${num2} is bigger.`);
   } else if (num1 == num2) {
