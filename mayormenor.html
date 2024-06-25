@@ -121,9 +121,29 @@
       </nav>
     </header>
     <section>
+      <p>
+        Enter two numbers, this program will tell you wich one is bigger. <br />
+        Press SUBMIT when you'r finished.
+      </p>
+    </section>
+    <section>
       <form>
-        <input type="number" name="num1" id="num1" />
-        <input type="number" name="num2" id="num2" />
+        <input
+          type="number"
+          name="num1"
+          value="0"
+          id="num1"
+          required
+          minlength="1"
+        />
+        <input
+          type="number"
+          name="num2"
+          value="0"
+          id="num2"
+          required
+          minlength="1"
+        />
         <input type="submit" id="run-game" value="Submit" />
       </form>
       <p id="answer"></p>
