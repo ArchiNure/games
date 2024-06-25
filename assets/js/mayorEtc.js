@@ -1,6 +1,7 @@
 const submitButton = document.getElementById("run-game");
 
 function mayorMenor(num1, num2) {
+  console.log(num1);
   const answer = document.getElementById("answer");
   if (num1 < num2) {
     answer.textContent = `${num2} is bigger.`;
@@ -13,8 +14,7 @@ function mayorMenor(num1, num2) {
 
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
-  const num1 = document.getElementById("num1").value;
-  const num2 = document.getElementById("num2").value;
-
+  let num1 = document.getElementById("num1").value;
+  let num2 = document.getElementById("num2").value;
   mayorMenor(num1, num2);
 });
