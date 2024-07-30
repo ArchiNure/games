@@ -21,10 +21,6 @@ p,
     max-height: 150px;
 }
 
-/*.bg-image {
-    background-image: url(../../assets/images/bacground.jpg);
-} */
-
 .max-height {
     max-height: 30vh
 }
@@ -37,4 +33,14 @@ p,
 .nav-link:hover {
     color: var(--bs-nav-link-hover-color);
     text-decoration: underline;
+}
+
+#game-grid {
+    height: 30vw;
+    width: 30vw;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 700px;
+    max-height: 700px;
+    border: solid rgb(0, 0, 0);
 }
