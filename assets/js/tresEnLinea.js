@@ -15,6 +15,8 @@ let playerOneTurn = true;
 let playerOneBoxes = [];
 let playerTwoBoxes = [];
 
+const youwon = document.getElementById("youwon");
+
 for (let index = 0; index < 9; index++) {
   const box = document.getElementById(`box${index}`);
 
@@ -33,10 +35,10 @@ for (let index = 0; index < 9; index++) {
 
       for (let combo = 0; combo < winningCombos.length; combo++) {
         if (includesAll(playerOneBoxes, winningCombos[combo])) {
-          console.log("Player one WINS");
+          youwon.textContent = `Player one WINS`;
         }
         if (includesAll(playerTwoBoxes, winningCombos[combo])) {
-          console.log("Player two WINS");
+          youwon.textContent = `Player two WINS`;
         }
       }
     },
