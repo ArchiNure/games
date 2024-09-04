@@ -1,5 +1,9 @@
+// Check all items in an array are inside another array for the winningCombos.
 const includesAll = (arr, values) => values.every((v) => arr.includes(v));
 
+// Select the HTML element for winning text.
+const youWon = document.getElementById("youwon");
+// Values for the winning direction combinations.
 const winningCombos = [
   [0, 1, 2],
   [3, 4, 5],
@@ -11,11 +15,11 @@ const winningCombos = [
   [2, 5, 8],
 ];
 
+// Value to define players turns.
 let playerOneTurn = true;
+// Player 1/2 box selection arrays for comparing against winningCombos.
 let playerOneBoxes = [];
 let playerTwoBoxes = [];
-
-const youwon = document.getElementById("youwon");
 
 for (let index = 0; index < 9; index++) {
   const box = document.getElementById(`box${index}`);
