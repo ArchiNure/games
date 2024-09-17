@@ -17,35 +17,67 @@ const winningCombos = [
 
 // Value to define players turns.
 let playerOneTurn = true;
+let turnsNum = 0;
 // Player 1/2 box selection arrays for comparing against winningCombos.
 let playerOneBoxes = [];
 let playerTwoBoxes = [];
+let boxClickEvents = [];
 
-for (let index = 0; index < 9; index++) {
-  const box = document.getElementById(`box${index}`);
-
-  box.addEventListener(
-    "click",
-    function (event) {
-      if (playerOneTurn == true) {
-        box.classList.add("bi-cross");
-        playerOneBoxes.push(index);
-        playerOneTurn = false;
-      } else {
-        box.classList.add("bi-circle");
-        playerOneTurn = true;
-        playerTwoBoxes.push(index);
-      }
-
-      for (let combo = 0; combo < winningCombos.length; combo++) {
-        if (includesAll(playerOneBoxes, winningCombos[combo])) {
-          youwon.textContent = `Player one WINS`;
-        }
-        if (includesAll(playerTwoBoxes, winningCombos[combo])) {
-          youwon.textContent = `Player two WINS`;
-        }
-      }
-    },
-    { once: true }
-  );
+function turns(box, index) {
+  if (playerOneTurn == true) {
+    box.classList.add("bi-cross");
+    playerOneBoxes.push(index);
+    playerOneTurn = false;
+  } else {
+    box.classList.add("bi-circle");
+    playerOneTurn = true;
+    playerTwoBoxes.push(index);
+  }
+  if (turnsNum == 9) {
+    youWon.textContent = `DRAW`;
+    endGame();
+  }
 }
+
+function endGame() {
+  for (let index = 0; index < 9; index++) {
+    const box = document.getElementById(`box${index}`);
+    const boxClickEvent = boxClickEvents[index];
+    box.removeEventListener("click", boxClickEvent);
+  }
+}
+
+function winner() {
+  for (let combo = 0; combo < winningCombos.length; combo++) {
+    if (includesAll(playerOneBoxes, winningCombos[combo])) {
+      youWon.textContent = `Player one WINS`;
+      endGame();
+    }
+    if (includesAll(playerTwoBoxes, winningCombos[combo])) {
+      youWon.textContent = `Player two WINS`;
+      endGame();
+    }
+  }
+}
+
+function boxClicK(box, index) {
+  turnsNum++;
+  turns(box, index);
+  winner();
+}
+
+/* This is an explanation
+ * This does something
+ * Here is a detailed explanation. */
+function boxInteraction() {
+  for (let index = 0; index < 9; index++) {
+    const box = document.getElementById(`box${index}`);
+    const boxClickEvent = boxClicK.bind(null, box, index);
+    boxClickEvents[index] = boxClickEvent;
+    box.addEventListener("click", boxClickEvent, {
+      once: true,
+    });
+  }
+}
+
+boxInteraction();
