@@ -1,8 +1,12 @@
 // Check all items in an array are inside another array for the winningCombos.
 const includesAll = (arr, values) => values.every((v) => arr.includes(v));
 
+//
+const resetButton = document.getElementById("reset-button");
+
 // Select the HTML element for winning text.
-const youWon = document.getElementById("youwon");
+const youWon = document.getElementById("you-won");
+
 // Values for the winning direction combinations.
 const winningCombos = [
   [0, 1, 2],
@@ -18,6 +22,7 @@ const winningCombos = [
 // Value to define players turns.
 let playerOneTurn = true;
 let turnsNum = 0;
+
 // Player 1/2 box selection arrays for comparing against winningCombos.
 let playerOneBoxes = [];
 let playerTwoBoxes = [];
@@ -60,7 +65,7 @@ function winner() {
   }
 }
 
-function boxClicK(box, index) {
+function boxClick(box, index) {
   turnsNum++;
   turns(box, index);
   winner();
@@ -72,7 +77,7 @@ function boxClicK(box, index) {
 function boxInteraction() {
   for (let index = 0; index < 9; index++) {
     const box = document.getElementById(`box${index}`);
-    const boxClickEvent = boxClicK.bind(null, box, index);
+    const boxClickEvent = boxClick.bind(null, box, index);
     boxClickEvents[index] = boxClickEvent;
     box.addEventListener("click", boxClickEvent, {
       once: true,
@@ -81,3 +86,19 @@ function boxInteraction() {
 }
 
 boxInteraction();
+resetButton.addEventListener("click", resetGame);
+
+function resetGame() {
+  for (let index = 0; index < 9; index++) {
+    const box = document.getElementById(`box${index}`);
+    box.classList.remove("bi-circle");
+    box.classList.remove("bi-cross");
+  }
+  youWon.textContent = "";
+  playerOneTurn = true;
+  playerOneBoxes = [];
+  playerTwoBoxes = [];
+  turnsNum = 0;
+
+  boxInteraction();
+}
