@@ -14,7 +14,7 @@ p,
 
 .bg-primary {
     background-color:
-        #e1fffd !important;
+        hsl(176, 100%, 87%) !important;
 }
 
 #logo {
@@ -42,5 +42,41 @@ p,
     min-height: 300px;
     max-width: 700px;
     max-height: 700px;
+}
+
+#box4 {
+    border: solid rgb(0, 0, 0);
+}
+
+#box1, #box7 {
+    border-left: solid rgb(0, 0, 0);
+    border-right: solid rgb(0, 0, 0);
+}
+
+#box3, #box5 {
+    border-top: solid rgb(0, 0, 0);
+    border-bottom: solid rgb(0, 0, 0);
+}
+
+.bi-circle {
+    display: inline-block;
+    content: "";
+    vertical-align: -.125em;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='blue' class='bi bi-circle' viewBox='0 0 16 16'><path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16' /></svg>");
+    background-repeat: no-repeat;
+}
+
+.bi-cross {
+    display: inline-block;
+    content: "";
+    vertical-align: -.125em;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='red' class='bi bi-x-lg' viewBox='0 0 16 16'><path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z' /></svg>");
+}
+
+.bg-secondary{
+    background-color: #ddffff!important;
+}
+
+#rory{
     border: solid rgb(0, 0, 0);
 }
